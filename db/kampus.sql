@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 03 Jun 2025 pada 03.39
+-- Waktu pembuatan: 03 Jun 2025 pada 04.31
 -- Versi server: 10.4.28-MariaDB
 -- Versi PHP: 8.2.4
 
@@ -42,9 +42,30 @@ CREATE TABLE `mahasiswa` (
 --
 
 INSERT INTO `mahasiswa` (`id`, `nim`, `nama`, `alamat`, `jenis_kelamin`, `email`, `telepon`) VALUES
-(1, '2310010433', 'Ahmad Arrizqianur Aslamudin', 'Jl. Simpang Belitung', 'Pria', 'arrizqianur@gmail.com', '082256239978'),
+(1, '', 'Pendidikan Agama Islam', '', '', '', ''),
 (2, '2310010000', 'Ibrahim', 'Jl. Indo', 'Pria', 'Ibra@gmail.com', '082212345678'),
 (4, '2310019999', 'Muhammad', 'Jl. Indo', 'Pria', 'muhammad@gmail.com', '082256239900');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `matakuliah`
+--
+
+CREATE TABLE `matakuliah` (
+  `id` int(11) NOT NULL,
+  `kode` varchar(10) NOT NULL,
+  `nama` varchar(100) NOT NULL,
+  `sks` int(11) NOT NULL,
+  `semester` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `matakuliah`
+--
+
+INSERT INTO `matakuliah` (`id`, `kode`, `nama`, `sks`, `semester`) VALUES
+(1, 'MGU101', 'Pendidikan Agama Islam', 2, 1);
 
 -- --------------------------------------------------------
 
@@ -78,6 +99,12 @@ ALTER TABLE `mahasiswa`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indeks untuk tabel `matakuliah`
+--
+ALTER TABLE `matakuliah`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indeks untuk tabel `user`
 --
 ALTER TABLE `user`
@@ -92,6 +119,12 @@ ALTER TABLE `user`
 --
 ALTER TABLE `mahasiswa`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT untuk tabel `matakuliah`
+--
+ALTER TABLE `matakuliah`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`
